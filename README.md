@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/MrMeeseeks17/jrpg-2017a-servidor.svg?branch=master)](https://travis-ci.org/MrMeeseeks17/jrpg-2017a-servidor)
 # World Of Middle Earth (WOME) - servidor
 
 ## Sobre las personas
@@ -12,12 +13,9 @@
 
 ### Integrantes del equipo
 
-* Completar ([xxxx](https://github.com/xxxx))
-* Completar ([xxxx](https://github.com/xxxx))
-* Completar ([xxxx](https://github.com/xxxx))
-* Completar ([xxxx](https://github.com/xxxx))
-* Completar ([xxxx](https://github.com/xxxx))
-* Completar ([xxxx](https://github.com/xxxx))
+* Espinola Hamm Carla Sabrina ([EspHammCarla](https://github.com/EspHammCarla))
+* Izaguirre Rodríguez Alan Joel ([AlanIza96](https://github.com/AlanIza96))
+* Rey Juan Cruz ([jjuancruzrey](https://github.com/Jjuancruzrey))
 
 ## Sobre la tecnología
 

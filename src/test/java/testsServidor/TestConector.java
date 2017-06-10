@@ -1,5 +1,7 @@
 package testsServidor;
 
+import java.io.IOException;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -18,9 +20,10 @@ public class TestConector {
 		Conector conector = new Conector();
 		conector.connect();
 
-		// Pasado este punto la conexión con la base de datos resultó exitosa
+		// Pasado este punto la conexion con la base de datos resultï¿½ exitosa
 
 		Assert.assertEquals(1, 1);
+		conector.close();
 	}
 
 	@Test
@@ -38,12 +41,13 @@ public class TestConector {
 		conector.registrarUsuario(pu);
 
 		pu = conector.getUsuario("UserTest");
+		conector.close();
 
 		Assert.assertEquals("UserTest", pu.getUsername());
 	}
 
 	@Test
-	public void testRegistrarPersonaje() {
+	public void testRegistrarPersonaje() throws IOException {
 		new Servidor();
 		Servidor.main(null);
 
@@ -70,6 +74,7 @@ public class TestConector {
 		conector.registrarPersonaje(pp, pu);
 
 		pp = conector.getPersonaje(pu);
+		conector.close();
 
 		Assert.assertEquals("PjTest", pp.getNombre());
 	}
@@ -89,6 +94,7 @@ public class TestConector {
 		conector.registrarUsuario(pu);
 
 		boolean resultadoLogin = conector.loguearUsuario(pu);
+		conector.close();
 
 		Assert.assertEquals(true, resultadoLogin);
 	}
@@ -106,6 +112,7 @@ public class TestConector {
 		pu.setPassword("test");
 
 		boolean resultadoLogin = conector.loguearUsuario(pu);
+		conector.close();
 
 		Assert.assertEquals(false, resultadoLogin);
 	}
