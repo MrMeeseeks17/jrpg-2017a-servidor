@@ -98,7 +98,7 @@ task fatJar(type: Jar) {
     	attributes "Main-Class": "servidor.Servidor"
   	}
 
-    baseName = 'jrpg-servidor'
+    baseName = 'jrpg-2017a-servidor'
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
  	
     with jar
