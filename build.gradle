@@ -11,10 +11,9 @@ sourceCompatibility = 1.7
 version = '0.1'
 test.ignoreFailures = true
 
-//defaultTasks 'clean', 'compileJava', 'fatJar' ,'test', 'checkstyleMain', 'pmd', 'findbugsMain', 'jacocoTestReport'
-defaultTasks 'clean' , 'fatJar' ,'test', 'checkstyleMain', 'pmd', 'findbugsMain', 'jacocoTestReport'
+defaultTasks 'clean', 'compileJava', 'fatJar' ,'test', 'checkstyleMain', 'pmd', 'findbugsMain', 'jacocoTestReport'
 
-compileJava {options.encoding = "UTF-8"}   
+//compileJava {options.encoding = "UTF-8"}   
 
 repositories {
 	mavenCentral()
@@ -30,8 +29,8 @@ dependencies {
     pmdConf group: 'pmd', name: 'pmd', version: '4.3'
     compile files('gson-2.8.0.jar')
     compile files('sqlite-jdbc-3.15.1.jar')
-    compile files('jrpg-dominio-0.1.jar')
-    compile files('jrpg-cliente-0.1.jar')
+    compile files('./Jars/cliente.jar')
+    compile files('./Jars/dominio.jar')
 }
 
 /*buildscript {
