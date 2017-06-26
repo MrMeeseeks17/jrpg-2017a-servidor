@@ -11,7 +11,10 @@ sourceCompatibility = 1.7
 version = '0.1'
 test.ignoreFailures = true
 
-defaultTasks 'clean', 'compileJava', 'fatJar' ,'test', 'checkstyleMain', 'pmd', 'findbugsMain', 'jacocoTestReport'
+//defaultTasks 'clean', 'compileJava', 'fatJar' ,'test', 'checkstyleMain', 'pmd', 'findbugsMain', 'jacocoTestReport'
+defaultTasks 'clean' , 'fatJar' ,'test', 'checkstyleMain', 'pmd', 'findbugsMain', 'jacocoTestReport'
+
+compileJava {options.encoding = "UTF-8"}   
 
 repositories {
 	mavenCentral()
