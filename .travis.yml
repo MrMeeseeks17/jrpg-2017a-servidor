@@ -3,6 +3,4 @@ jdk:
   - oraclejdk7
   - openjdk7
 
-before_install:
-  - wget -P $TRAVIS_BUILD_DIR/ https://jpas.com.ar/jenkins/job/unlam-jrpg/ws/build/libs/jrpg-dominio-0.1.jar
-  - wget -P $TRAVIS_BUILD_DIR/ https://jpas.com.ar/jenkins/job/unlam-jrpg-client/ws/build/libs/jrpg-cliente-0.1.jar
+install: ant deps
