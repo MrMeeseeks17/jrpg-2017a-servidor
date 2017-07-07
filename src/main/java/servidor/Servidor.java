@@ -17,14 +17,18 @@ import java.util.Map;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
+import chatServidor.ServidorChat;
 import mensajeria.PaqueteMovimiento;
 import mensajeria.PaquetePersonaje;
 
 public class Servidor extends Thread {
 
+	private static ServidorChat serverChat;
+	
 	private static ArrayList<EscuchaCliente> clientesConectados = new ArrayList<>();
 	
 	private static Map<Integer, PaqueteMovimiento> ubicacionPersonajes = new HashMap<>();
@@ -80,6 +84,14 @@ public class Servidor extends Thread {
 				server.start();
 				botonIniciar.setEnabled(false);
 				botonDetener.setEnabled(true);
+				
+				
+				try {
+					serverChat = new ServidorChat(10000);
+					serverChat.start();
+				} catch (IOException e1) {
+					JOptionPane.showMessageDialog(null, "Error al iniciar Chat");
+				}
 			}
 		});
 
@@ -99,7 +111,6 @@ public class Servidor extends Thread {
 					serverSocket.close();
 				} catch (IOException e1) {
 					log.append("Fallo al intentar detener el servidor." + System.lineSeparator());
-					e1.printStackTrace();
 				}
 				if(conexionDB != null)
 					conexionDB.close();
@@ -124,7 +135,6 @@ public class Servidor extends Thread {
 						serverSocket.close();
 					} catch (IOException e) {
 						log.append("Fallo al intentar detener el servidor." + System.lineSeparator());
-						e.printStackTrace();
 						System.exit(1);
 					}
 				}
@@ -164,8 +174,7 @@ public class Servidor extends Thread {
 				clientesConectados.add(atencion);
 			}
 		} catch (Exception e) {
-			log.append("Fallo la conexión." + System.lineSeparator());
-			e.printStackTrace();
+			log.append("Fallo la conexiï¿½n." + System.lineSeparator());
 		}
 	}
 

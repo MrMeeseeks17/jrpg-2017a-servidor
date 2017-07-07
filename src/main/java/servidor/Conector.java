@@ -9,6 +9,8 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.swing.JOptionPane;
+
 import mensajeria.PaquetePersonaje;
 import mensajeria.PaqueteUsuario;
 
@@ -120,7 +122,6 @@ public class Conector {
 		} catch (SQLException e) {
 			Servidor.log.append(
 					"Error al intentar crear el personaje " + paquetePersonaje.getNombre() + System.lineSeparator());
-			e.printStackTrace();
 			return false;
 		}
 
@@ -155,7 +156,6 @@ public class Conector {
 
 		} catch (SQLException e) {
 			Servidor.log.append("Error al registrar el inventario de " + idInventarioMochila + System.lineSeparator());
-			e.printStackTrace();
 			return false;
 		}
 	}
@@ -182,7 +182,6 @@ public class Conector {
 
 		} catch (SQLException e) {
 			Servidor.log.append("El usuario " + user.getUsername() + " fallo al iniciar sesión." + System.lineSeparator());
-			e.printStackTrace();
 			return false;
 		}
 
@@ -241,7 +240,6 @@ public class Conector {
 			Servidor.log.append("El personaje " + paquetePersonaje.getNombre() + " se ha actualizado con éxito."  + System.lineSeparator());;
 		} catch (SQLException e) {
 			Servidor.log.append("Fallo al intentar actualizar el personaje " + paquetePersonaje.getNombre()  + System.lineSeparator());
-			e.printStackTrace();
 		}
 		
 		
@@ -314,7 +312,6 @@ public class Conector {
 		} catch (SQLException ex) {
 			Servidor.log.append("Fallo al intentar recuperar el personaje " + user.getUsername() + System.lineSeparator());
 			Servidor.log.append(ex.getMessage() + System.lineSeparator());
-			ex.printStackTrace();
 		}
 
 		return new PaquetePersonaje();
@@ -341,7 +338,6 @@ public class Conector {
 		} catch (SQLException e) {
 			Servidor.log.append("Fallo al intentar recuperar el usuario " + usuario + System.lineSeparator());
 			Servidor.log.append(e.getMessage() + System.lineSeparator());
-			e.printStackTrace();
 		}
 		
 		return new PaqueteUsuario();
@@ -365,8 +361,7 @@ public class Conector {
 			stActualizarMochila.executeUpdate();
 		
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, "Error al Actualizar Inventario");
 		}
 		
 		

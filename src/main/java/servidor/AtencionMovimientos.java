@@ -1,6 +1,8 @@
 package servidor;
 
 
+import javax.swing.JOptionPane;
+
 import com.google.gson.Gson;
 
 import estados.Estado;
@@ -41,7 +43,7 @@ public class AtencionMovimientos extends Thread {
 				}
 				
 			} catch (Exception e){
-				e.printStackTrace();
+				JOptionPane.showMessageDialog(null, "Error al sincronizar movimientos");
 			}
 		}
 	}

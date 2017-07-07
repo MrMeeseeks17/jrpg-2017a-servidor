@@ -260,7 +260,6 @@ public class EscuchaCliente extends Thread {
 
 		} catch (IOException | ClassNotFoundException e) {
 			Servidor.log.append("Error de conexion: " + e.getMessage() + System.lineSeparator());
-			e.printStackTrace();
 		} 
 	}
 	
