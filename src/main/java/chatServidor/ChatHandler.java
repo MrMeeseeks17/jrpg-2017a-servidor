@@ -18,8 +18,7 @@ public class ChatHandler extends Thread {
 	public static int LOGGED = 1;
 	private final Pattern patternUsr = Pattern.compile("^[A-Za-z0-9]{4,10}$");
 	public static HashMap<String, ChatHandler> clients;
-	public static Logger log;
-	
+
 	private Socket s;
 	private DataInputStream i;
 	private DataOutputStream o;
